@@ -1,0 +1,31 @@
+// 色設定
+$color-main: #3F51B5;
+$color-accent: #E81919;
+$color-text: #333333;
+$color-white: #fff;
+$color-grey: #EFEFEF;
+
+
+// レスポンシブ設定（ブレイクポイント）
+$layout-width-container: 1200px;
+$breakpoints: (
+  'sp': 'only screen and (max-width: 767px)',
+  'tb': 'only screen and (min-width: 768px) and (max-width: #{$layout-width-container})',
+  'pc': 'only screen and (min-width: #{$layout-width-container})'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// ボタン基本形
+@mixin btn($color: $color-white, $background: $color-main) {
+    display: inline-block;
+    color: $color;
+    border: none;
+    background: $background 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 8px;
+}
