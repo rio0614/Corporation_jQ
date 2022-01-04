@@ -1127,6 +1127,82 @@ body {
 }
 
 // =======================================
+// Q & Aセクション
+// =======================================
+.qa-group {
+    width: 901px;
+    margin: 0 auto;
+
+    @include mq(tb) {
+        width: 700px;
+    }
+
+    @include mq(sp) {
+        width: 90%;
+    }
+}
+
+.qa-unit:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.question {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    color: $color-white;
+    background-color: $color-main;
+    padding: 12px 56px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &::before {
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        content: "Q";
+    }
+
+    span {
+        position: absolute;
+        top: 13px;
+        right: 14px;
+        width: 14px;
+        height: 14px;
+        background: url(../img/plus.png) no-repeat center center/ contain;
+        transition: all .1s ease 0s;
+
+        &.close {
+            background: url(../img/minus.png) no-repeat center center/ contain;
+        }
+    }
+
+    @include mq(sp) {
+        padding: 12px 46px;
+    }
+}
+
+
+.answer {
+    display: none;
+    position: relative;
+    color: $color-main;
+    background-color: $color-white;
+    line-height: 1.5;
+    font-weight: bold;
+    border: 1px solid $color-main;
+    padding: 16px 55px;
+
+    &::before {
+        position: absolute;
+        top: 16px;
+        left: 20px;
+        content: "A";
+    }
+}
+
+
+// =======================================
 // footerセクション
 // =======================================
 .footer {

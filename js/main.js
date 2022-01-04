@@ -80,4 +80,11 @@ $(function () {
         return false;
     });
 
+    // Q&A アコーディオン設定
+    $(".question").on("click", function() {
+        $(this).next().slideToggle("");
+        $(this).children(".question-icon").toggleClass( "close");
+        return false;
+    });
+
 });
