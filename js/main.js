@@ -83,7 +83,7 @@ $(function () {
     // Q&A アコーディオン設定
     $(".question").on("click", function() {
         $(this).next().slideToggle("");
-        $(this).children(".question-icon").toggleClass( "close");
+        $(this).children(".question-icon").toggleClass( "open");
         return false;
     });
 

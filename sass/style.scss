@@ -984,12 +984,13 @@ body {
     text-align: center;
     position: relative;
 
-    input[type="submit"] {
+    .submit {
         @include btn();
         background: $color-main url(../img/button-arrow.png) no-repeat right 12px center / 17px 16px;
         font-weight: bold;
-        padding: 17px 120px;
+        padding: 20px 120px;
         margin-bottom: 0;
+        cursor: pointer;
         transition: all .3s ease;
 
         @include mq(sp) {
@@ -1163,17 +1164,40 @@ body {
         content: "Q";
     }
 
-    span {
+    .question-icon {
         position: absolute;
         top: 13px;
         right: 14px;
         width: 14px;
         height: 14px;
-        background: url(../img/plus.png) no-repeat center center/ contain;
-        transition: all .1s ease 0s;
 
-        &.close {
-            background: url(../img/minus.png) no-repeat center center/ contain;
+        &.open {
+            .question-bar2 {
+                transform: rotate(90deg);
+            }
+        }
+
+        .question-bar1 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content: "";
+            width: 14px;
+            height: 2px;
+            background-color: $color-white;
+        }
+    
+        .question-bar2 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            width: 2px;
+            height: 14px;
+            background-color: $color-white;
+            transition: transform .3s ease 0s;
         }
     }
 
@@ -1181,7 +1205,6 @@ body {
         padding: 12px 46px;
     }
 }
-
 
 .answer {
     display: none;
